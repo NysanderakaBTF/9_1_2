@@ -36,12 +36,15 @@ hexmask& hexmask::operator|(hexmask& a)
 
 string hexmask::get_hex_val()
 {
-	char ss[8];
+	string ss = "";
 	int q = 0;
 	for (int i = 0; i < 8; i++) {
 		q += pow(2, (7 - i)) * val[i];
 	}
-	_itoa_s(q, ss,8, 16);
-	for (int i = 0; i < 8; i++) ss[i]=toupper(ss[i]);
-	return (string(ss));
+	while (q) {
+		char f = (q % 16 > 9) ? char(q % 16 + 55) : char(q % 16 + 48);
+		q /= 16;
+		ss = f + ss;
+	}
+	return ss;
 }

@@ -19,7 +19,7 @@ int main()
 		else if (q == '|')
 			ve[n - 1] = ve[n - 1] | ve[nn - 1];
 	}
-	cout << ve[nn - 1].get_hex_val();
+	cout << ve[n - 1].get_hex_val();
 
 }
 
