@@ -15,7 +15,7 @@ hexmask::hexmask(string va, string ma)
 	}
 }
 
-hexmask& hexmask::operator&(hexmask& a)
+hexmask& hexmask::operator&(const hexmask& a)
 {
 	for (int i = 0; i < 8; i++) {
 		if (this->mask[i] && a.mask[i]) {
@@ -24,7 +24,7 @@ hexmask& hexmask::operator&(hexmask& a)
 	}
 	return *this;
 }
-hexmask& hexmask::operator|(hexmask& a)
+hexmask& hexmask::operator|(const hexmask& a)
 {
 	for (int i = 0; i < 8; i++) {
 		if (this->mask[i] && a.mask[i]) {

@@ -8,8 +8,8 @@ private:
 	bool mask[8];
 public:
 	hexmask(string, string);
-	hexmask& operator& (hexmask& a);
-	hexmask& operator| (hexmask& a);
+	hexmask& operator& (const hexmask& a);
+	hexmask& operator| (const hexmask& a);
 	string get_hex_val();
 
 };
